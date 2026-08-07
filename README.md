@@ -31,6 +31,8 @@ Duração: 20 Semanas 1º Semestre e 20 Semanas 2º Semestre
 
 #### O que é BackEnd?
 
+>Obs: backend é quando a interface do usuario envia um comando/uma pergunta e o backend envia a resposta. Ou seja backend é a resposta da aqusição de cliente.
+
 O back-end é a parte de uma aplicação que o usuário não vê, mas que faz tudo funcionar por trás das telas.
 
 O Back-End é a parte de um sistema que funciona nos servidores, sendo responsável por executar a lógica da aplicação, processar informações e armazenar dados. 
@@ -127,3 +129,75 @@ O PHP de fato é yma das linguagens de programação mais populares da atualidad
 
 ##### Criando Minha Primeira Aplicação em PHP
 
+1. Antes de começar a Codar:
+-Preparar meu VSCode
+    -Criar um profile proprio para PHP
+    -Instalar Extensões Necessárias para transformar o VScode em uma IDE :
+        -PHP Intelephense -> Permite a utilização de Snippets(Atalhos de codigos)
+        -PHP Debug -> Ajuda a encontrar erros de codigos
+        -PHP Cs Fixer -> Formatação de códigos (Identação)
+        -PHP Sever -> Ajuda na crição de um servidor local para PHP.
+    -Desabilitamos o PHP Nativo do VSCode (@builtin PPHP)
+
+2. Hello World (**MUITO IMPORTANTE**)
+
+## Esudo de Variáveis e Constates em PHP
+
+Declarar variáveis é alocar um espaço na memória que permite a inclusão e manipulação de dados.
+
+**Variáveis**
+
+- devem ser declaradas usando "$" ane sdo no me da variável
+- são não tipadas (não precisar declarar o tipo dela na criação).
+- podem ser String, Numéricas (Interger no float), booleanas e nulas. Não permitem declaração de undefiend
+- usar o "declare(strict_tupes=1);" na primeira linha do arquivo; -> blinda o sistemas contra conflitos de tipos de variáveis.
+
+**constantes**
+
+- não podem ser mudadas ou redeclaradas após a criação
+- podem ser criadas usando "const" ou "define"
+- não permite interpolação
+
+## Estudo de operadores
+
+**aritimeticos**: são usados para realizar cálculos
+
+|operadores | nome | exemplo | resultados |
+|-----------|------|---------|------------|
+|     +     |adição|  10+5   |    15      |
+|     -     |subtrção| 10-5  |    5       |
+|     *     |multiplicação|10*5|   50     |
+|     /     |divisão| 10/5 | 2 |
+| % | Modulo(Resto) | 10%3 | 1 (10 div 3 da 3, sobra 1) |
+| ** | Expoente | 2**3 | 8(2 elevado a 3) |
+
+>Obs: O operador % é o melhor amigo de um programador, permite ordenar listas e organizar fias e planilhas.
+
+
+**relacionais**: Permite relacionamento entre dois ou mais valores, o resultado de uma operação é sempre um booleano (verdadeiro ou falso)
+ 
+| Operador | Significado | Exemplo | Resultado |
+| - |  - | - | - |
+| > | Maior que | 18 > 18 | false |
+| >= | Maior ou igual a | 18 >= 18 | true |
+| < | Menor que | 10 < 20 | true |
+| <= | Menor ou igual a | 10 <=5 | false |
+| == | Comparação de Valor | "10"==10 |  true | 
+| === | Comparação Estrita | "10"===10 | false |
+| != | Diferente | "10"!=10 | false |
+| !== | Estritamente Diferente | "10"!==10 | true | 
+---
+
+**lógicos** : permitem a combinação entre senteças.
+
+- Operador AND (E) => && : para o resultado ser verdadeiro, Todas as Combinações precisam ser verdadeira
+    - true && true => true
+    - true && false => false
+
+- Operador OR (OU) => || : para o resultado ser verdadeiro, Basta apenas uma condição ser verdadeira
+    - false || true => true
+    - false || false => false
+
+- Operador NOT (Não) => ! : Inverte a lógica da Operação, 
+    - !true => false
+    - !false => true
