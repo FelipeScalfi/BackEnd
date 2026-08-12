@@ -190,14 +190,60 @@ Declarar variáveis é alocar um espaço na memória que permite a inclusão e m
 
 **lógicos** : permitem a combinação entre senteças.
 
-- Operador AND (E) => && : para o resultado ser verdadeiro, Todas as Combinações precisam ser verdadeira
-    - true && true => true
-    - true && false => false
+- Operador AND (E) -> && : para o resultado ser verdadeiro, Todas as Combinações precisam ser verdadeira
+    - true && true -> true
+    - true && false -> false
 
-- Operador OR (OU) => || : para o resultado ser verdadeiro, Basta apenas uma condição ser verdadeira
-    - false || true => true
-    - false || false => false
+- Operador OR (OU) -> || : para o resultado ser verdadeiro, Basta apenas uma condição ser verdadeira
+    - false || true -> true
+    - false || false -> false
 
 - Operador NOT (Não) => ! : Inverte a lógica da Operação, 
-    - !true => false
-    - !false => true
+    - !true -> false
+    - !false -> true
+
+    ---
+
+    ## Estrutura de controle de dados (condicionais e repetição)
+
+    - **conteudo**: Estrutura `if`, `else` e `elseif`, operadores ternários, `match` -> substituto do `switch/case`,loops `for`,`while`, `do-while` e `foreach`
+
+    ### Estrutura de controle de dados ajudam no processo de automatização em programas e sistemas
+
+    #### Condicionais (if, else, elseif)
+
+    **formas de uso**
+    -uso do *if* apenas:
+    ex: aplicar desconto de 10% em compras de 100 reais;
+
+    ```mermaid
+    graph LR
+    A[Comando]-->B[Condição]--C[Ação]
+
+    ```
+    ----
+    ```php
+    if($valordacompra > 100){
+        $valorFinal = $valordacompra * 0.9;
+    } 
+    ```
+    ---
+    -Uso de `if` e do `else` Exemplo: aplicar um desconto de 10% para compras acima de 100reais e 5% para as demais compras
+
+    ```mermaid
+    graph LR
+    A[comando]-->B[condição]
+     B --> |true| C[Ação 1]
+    B --> |false| D[Ação 2]
+
+```
+
+```php
+
+if($valorCompra > 100){
+    $valorFinal = $valorCompra * 0.9;
+} else {
+    $valorFinal = $valorCompra * 0.95;
+}
+
+```
