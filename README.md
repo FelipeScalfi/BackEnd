@@ -221,12 +221,15 @@ Declarar variáveis é alocar um espaço na memória que permite a inclusão e m
     A[Comando]-->B[Condição]--C[Ação]
 
     ```
-    ----
+
+    ---
+
     ```php
     if($valordacompra > 100){
         $valorFinal = $valordacompra * 0.9;
     } 
     ```
+    
     ---
     -Uso de `if` e do `else` Exemplo: aplicar um desconto de 10% para compras acima de 100reais e 5% para as demais compras
 
@@ -365,4 +368,139 @@ graph LR
 
 ```
 
--O Laço `do-While`
+Exemplo de aplcação de While: Jogo de adivinhação de um nº secreto
+
+```php
+$numeroSecreto = rand(1,10);
+$tentativas = 0;
+$numeroEscolhido = 0;
+
+While(numeroEscolhido != numeroSecreto){
+    echo 'tente novamente'
+    numeroEscolhido = rand(1,10);
+    tentativas++;
+}
+echo "Acertou!!! o nº secreto é $numeroEscolhido";
+```
+
+-O Laço `do-While` (Faça - Enquanto)
+ 
+ A diferença é que ele executa o bloco pelo menos uma vez, mesmo que a condição seja falsa dez de o inicio, pois ele só pergunta no final.
+
+```mermaid 
+ flowchart LR 
+
+    A([Início]) --> B[Ação]
+    B --> C{Condição}
+    C --true--> B
+    C --false--> D([Fim])
+```
+
+Exemplo: Jogo de Adivinhação de um nº
+
+```php
+$numeroSecreto = rand(1,10);
+
+do{
+    $numeroEscolhido = rand(1,10)
+
+    if(numeroEscolhido == numeroSecreto){
+     echo "Parabéns, Acertou!!!";
+        break;
+    }
+    echo "Tente Novamente!!!";
+
+} while(numeroEscolhido != numeroSecreto);
+
+```
+
+## Freio de emergência `break` e `continue`
+
+As vezes precisamos interferir no laço enquanto ele esta rodando
+
+-`break`=> **Para Tudo!!** Quebra o laço e vai embora
+-`Continue` => **Pula a Rodada!!** ele ignora o codigo daquela linha e oula logo para a proxima repetição.
+
+Exemplo de aplicação do codigo: Sistema de controle do elevador 
+
+```php 
+
+for($andar = 1 ; $andar<=10; $andar++){
+    if($andar ==4){
+        echo "Andar $andar está em obras. Passando direto!";
+        continue;
+    }
+
+    echo "Elevador parou no andar $andar"
+}
+``` 
+---
+### Laço de Repetição `for` 
+
+Use o `for` quando voçê sabe quantas vezes precisa repetir uma ação ou quando precisa controla um computador. Ele possui três partes :
+
+- Inicialização;
+- Condição;
+- Incremento;
+
+for (inicialização, condição, incremento){
+    Ação
+}
+
+```mermaid
+flowchart LR
+A[Inicio: i=0] --> B{i<10?}
+B --true--> C[Ação]
+C --> D[i++]
+D --> B
+B --false--> E[Fim]
+```
+
+Exemplo: Exibir todos os meses do ano
+
+```php
+for($mes-1; $mes<=12; $mes++){
+    echo"Mês $mes";
+}
+```
+
+Nessse Exemplo, `$mes` começa em 1, o laço cotinua enquanto `mes` for menor ou igual a 12 e, ao final de cada repetição, `$mes++` aumenta o contador em 1.
+
+#### Laço de repetição `foreach`
+
+Use o `foreach` quando precisa percorrer cada item de um **array**.Ele acessa os elementos diretamente, sem que você precise controlar o contador.
+
+Exemplo: Imprimir todos os items de um vetor
+
+```php
+
+$frutas = ["Maça", "Banana", "Uva", "Pera"];
+
+foreach($frutas as $fruta){
+    echo "Fruta: $fruta";
+}
+```
+ 
+ Outro exemplo: Acessar a chave e o vlor de cada item: 
+
+```php
+
+$preços = [
+    'caderno' => 25.90,
+    'caneta' => 5.50,
+    'mochila' => 99.00
+]; //Vetor não ordenado chave => valor
+
+foreach ($preços as $produtos => $preço){
+    echo "$produto: R$ number_format($preço,2)";
+}
+```
+
+---
+---
+## Desafio : Simulador de cobrança (FINANSENAI)
+
+
+
+
+
