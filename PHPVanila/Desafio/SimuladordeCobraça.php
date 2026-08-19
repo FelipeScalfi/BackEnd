@@ -1,6 +1,5 @@
 <?php 
-echo "Digite a categoria do cliente ";
-$cargorariaCliente = readline();
+$cargorariaCliente = 'A';
 $dividaAtual = 1000;
 
 $taxa = match($cargorariaCliente) {
