@@ -680,3 +680,69 @@ function saudar():string{
 A função `saudar()`não conhece a variável globla `$nome`
 
 > **Resumo:** variáveis protegem os dados internos da função; parâmetros são o caminho recomendado para evitar Erros e enviar Informações, e `return`é usado para devolver um resultado ao código que chamou a função.
+
+---
+
+## Semana 5 - Arrays e Manipulação Avançada de Dados
+
+Um array (tamém conhecido como vetor) é uma estrutura de dados usada para armazenar vários valores em uma unica variável.
+
+**Tipos de Arrays em PHP:**
+
+-Indexados/Ordenados(Númerica): Usam números inteiros como indices(chaves), que começamem zero por padrão;
+-Associativos/NãoOrdenados(string): Usam chaves (string) para identificar valores;
+- Multidimensionais: Contêm um ou mais arrays dentro de outro array.
+
+**Exemplos de Arrays:**
+
+```php
+//array indexado
+$frutas = ["maça", "banana", "laranja"];
+
+//array associativo
+$capitais = [
+    "SP" => "São Paulo",
+    "RJ" => "Rio de Janeiro",
+    "MG" => "Belo Horizonte",
+    "ES" => "Vitória",
+];
+
+//acessando os dados dos Arrays
+
+echo $frutas[1]; // banana
+echo $capitais["MG"]; //Belo Horizonte
+```
+
+>Obs : em arrays associativos, nos trocamos os n° de índice por nomes(chaves/Keys). Na declaração do vetor usamos setinhas (->) que significa "recebe"
+
+## Arrays multidimencionais (banco de dados na memoria)
+
+É aqui que o backEnd começa de verdade. O arrays multidimancionais é o formato como o banco de dados e apis respondem as solicitções feitas pelo backEnd
+
+**Exemplo de arrays multidimencional:**
+
+```php
+$cliente = [
+    [id =>1, "nome" => "Ana","email"=>"ana@email.com","ativo"=>true]
+    [id =>2, "nome" => "Bruno","email"=>"Bruno@email.com","ativo"=>false]
+    [id =>3, "nome" => "Carlos","email"=>"Carlos@email.com","ativo"=>true]
+];
+//Como acessar o Email do Carlos
+echo $clientes[2]["email"]; //Carlos@hotmail.com
+```
+
+#### O Melhor amigo dos Array: `O Foreach`
+
+O laço de repetição especial para arrays. O `foreach` percorre cada elementos de um array
+
+**Exemplo de Aplicação:**
+
+```php
+foreach($clientes as $clienteAtual){
+    echo $clienteAtual["nome"];
+    echo $clienteAtual["email"];
+}
+// vai imprimir nome e email de todos os Clientes do Array
+```
+
+## Transformação de arrays e Arrow
